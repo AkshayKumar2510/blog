@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.//www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+</head>
+<body>
+    <h3>My Blog Application</h3><br>
+        <form action="#" th:action="@{/post/savePost}" th:object="${postForm}" method="post">
+              <!-- Add hidden id field -->
+              <input type="hidden" th:field="*{id}"/><br>
+              <input type="text" th:field="*{title}" placeholder="Title"><br><br>
+              <input type="text" th:field="*{excerpt}" placeholder="Excerpt"><br><br>
+              <input type="text" th:field="*{content}" placeholder="Content"><br><br>
+              <input type="text" th:field="*{author}" placeholder="Author"><br><br>
+              <button type="submit">Publish</button><br>
+        </form>
+        <hr>
+        <a th:href="@{/post/}">Blog List Page</a>
+</body>
+</html>

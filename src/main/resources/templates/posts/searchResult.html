@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+    <h3>Blog Application</h3><br>
+        <!--Comments Section -->
+        <div>
+            <div th:each="data : ${posts}">
+                <p th:text="${data.title}"/><p th:text="${data.author}"/><p th:text="${data.publishTime}"/>
+                <p th:text="${data.content}"/>
+            <form action="/saveComment" method="post" th:object="${comments}">
+                <input type="hidden" name="id"/><br>
+                <!--<input type="hidden" name="data.id"/><br>-->
+                <input type="text" placeholder="Name" name="name"><br><br>
+                <input type="text"  placeholder="Email" name="email"><br><br>
+                <input type="text"  placeholder="Comment" name="comment"><br><br>
+                <button type="submit">Comment</button><br>
+            </form>
+
+            </div><!--
+            <p th:each="tempCommentData : ${commentList}">
+            <p th:text="${tempCommentData.name}"></p> <p th:text="${tempCommentData.email}"></p>
+            <p th:text="${tempCommentData.comment}"></p>-->
+        </div>
+
+
+            <!--<div>
+                <form action="#" th:action="@{/delete}" method="post">
+                    <input type="hidden" name="commentId" th:value="${tempCommentData.id}">
+                    <button type="submit" onclick="if(!(confirm('Are you sure you want to delete comment?'))) return false">Delete</button>
+                </form>
+            </div><hr>
+        </div>-->
+        <!--<form action="#" th:action="@{/saveComment}" th:object="${commentForm}" method="post">
+        &lt;!&ndash; Add hidden id field &ndash;&gt;
+        <input type="hidden" th:field="*{id}"/><br>
+        <input type="hidden" th:field="*{data.id}"/><br>
+        <input type="text" th:field="*{name}" placeholder="Name"><br><br>
+        <input type="text" th:field="*{email}" placeholder="Email"><br><br>
+        <input type="text" th:field="*{comment}" placeholder="Comment"><br><br>
+        <button type="submit">Comment</button><br>
+    </form>-->
+
+    <!--<div th:each="searchData : ${searchList}">
+        <p th:text="${searchData.title}"></p> <p th:text="${searchData.excerpt}"></p>
+        <p th:text="${searchData.content}"></p> <p th:text="${searchData.author}"></p>
+        <hr>
+    </div>-->
+    <a th:href="@{/post/}">Blog List Page</a>
+</body>
+</html>

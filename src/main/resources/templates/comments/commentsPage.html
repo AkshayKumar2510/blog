@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+<!--<h3>My Blog Application</h3><br>
+<a th:href="@{/comments/showCommentForm}">Comment</a>
+<div th:each="tempCommentData : ${commentList}">
+    <p th:text="${tempCommentData.name}"></p> <p th:text="${tempCommentData.email}"></p>
+    <p th:text="${tempCommentData.comment}"></p>
+
+
+    <div>
+        <form action="#" th:action="@{/comments/showCommentFormForUpdate}" method="post">
+            <input type="hidden" name="commentId" th:value="${tempCommentData.id}" />
+            <button type="submit">Edit Comment</button>
+        </form>
+    </div>
+    &lt;!&ndash; <a th:href="@{/comments/delete(commentId=${tempCommentData.id}})}"
+         onclick="if(!(confirm('Are you sure you want to delete this comment?'))) return false"> Delete </a> &ndash;&gt;
+    <div>
+        <form action="#" th:action="@{/comments/delete}" method="post">
+            <input type="hidden" name="commentId" th:value="${tempCommentData.id}">
+            <button type="submit" onclick="if(!(confirm('Are you sure you want to delete comment?'))) return false">Delete</button>
+        </form>
+    </div><hr>
+</div>-->
+</body>
+</html>
